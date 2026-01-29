@@ -13,7 +13,7 @@ else:
 st.divider()
 
 st.header("2. Проверка на число")
-num = st.slider("Избери число:", min_value=0, max_value=100, value=0)
+num = st.slider("Избери число:", min_value=0, max_value=20, value=0)
 
 if num > 10:
     st.write(f"Числото {num} е **голямо**.")
