@@ -1,7 +1,6 @@
 import streamlit as st
 
-# Заглавие на цялото приложение
-st.title("Streamlit Упражнения - Пълен пакет")
+st.title("Streamlit Упражнения - Версия със Слайдъри")
 
 st.header("1. Отношение към Python")
 answer1 = st.radio("Обичаш ли Python?", ("да", "не"))
@@ -11,23 +10,23 @@ if answer1 == "да":
 else:
     st.info("Ще го харесаш!")
 
-st.divider() 
+st.divider()
 
 st.header("2. Проверка на число")
-num = st.number_input("Въведи число:", value=0)
+num = st.slider("Избери число:", min_value=0, max_value=100, value=0)
 
 if num > 10:
-    st.write("Голямо число")
+    st.write(f"Числото {num} е **голямо**.")
 else:
-    st.write("Малко число")
+    st.write(f"Числото {num} е **малко**.")
 
 st.divider()
 
 st.header("3. Математически тест")
-math_answer = st.number_input("Колко е 5 × 5?", step=1)
+math_answer = st.slider("Колко е 5 × 5?", min_value=0, max_value=50, value=0)
 
 if st.button("Провери"):
     if math_answer == 25:
-        st.success("Вярно!")
+        st.success("Вярно! Точно 25.")
     else:
-        st.error("Грешно. Опитай пак")
+        st.error(f"Грешно. Ти избра {math_answer}, а верният отговор е друг.")
